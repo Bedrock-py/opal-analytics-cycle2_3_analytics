@@ -1,0 +1,12 @@
+{ "opal-dataloader-ingest-gallup_cycle2_load":
+        {
+    	    "description": "NGS2 Gallup Witness Project Cycle 2; Runs Analytics R script",
+            "units": "Analytics.py",
+            "supports": "",
+            "python_dependencies": "pathlib rpy2",
+            "system_dependencies": "",
+            "api": "analytics",
+            "interface": "analytics",
+            "installation_script": ""
+        }
+}
