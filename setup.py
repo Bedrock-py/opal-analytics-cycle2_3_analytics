@@ -1,4 +1,4 @@
-"""Pip install script for bedrock.analytics.logit2.*
+"""Pip install script for opals.cycle2_3_analytics
 """
 
 from setuptools import setup, find_packages
@@ -19,9 +19,9 @@ def opal_registration():
     from bedrock.core.opals import manage_opals
     algs = ['Load']
     for alg in algs:
-        success = manage_opals("add", "ingest", "opals.cycle2_1_load.{0}.{0}".format(alg))
+        success = manage_opals("add", "ingest", "opals.cycle2_3_analytics.{0}.{0}".format(alg))
         if not success:
-            success = manage_opals("reload", "ingest", "opals.cycle2_1_load.{0}.{0}".format(alg))
+            success = manage_opals("reload", "analytics", "opals.cycle2_3_analytics.{0}.{0}".format(alg))
             if not success:
                 raise Exception("Unable to install: {}".format(alg))
 
@@ -82,7 +82,7 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages=['opals.cycle2_1_load'],
+    packages=['opals.cycle2_3_analytics'],
     namespace_packages=['opals'],
     cmdclass={
         'develop': PostDevelopCommand,

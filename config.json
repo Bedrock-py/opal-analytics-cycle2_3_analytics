@@ -1,4 +1,4 @@
-{ "opal-dataloader-ingest-gallup_cycle2_load":
+{ "opal-analytics-gallup_cycle2_3_analytics":
         {
     	    "description": "NGS2 Gallup Witness Project Cycle 2; Runs Analytics R script",
             "units": "Analytics.py",
