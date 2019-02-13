@@ -17,7 +17,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 def opal_registration():
     from bedrock.core.opals import manage_opals
-    algs = ['Load']
+    algs = ['Analytics']
     for alg in algs:
         success = manage_opals("add", "ingest", "opals.cycle2_3_analytics.{0}.{0}".format(alg))
         if not success:
@@ -43,7 +43,7 @@ class PostInstallCommand(install):
 
 
 setup(
-    name='opals.cycle2_1_load',
+    name='opals.cycle2_3_analytics',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
@@ -54,7 +54,7 @@ setup(
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/bedrock-py/opal-ingest-cycle2_1_load',
+    url='https://github.com/bedrock-py/opal-ingest-cycle2_3_analytics',
 
     # Author details
     author='Georgia Tech Research Institute',
