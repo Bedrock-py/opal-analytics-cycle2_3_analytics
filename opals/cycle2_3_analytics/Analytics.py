@@ -3,15 +3,12 @@ import pathlib
 import traceback
 
 from bedrock.analytics.api import results_collection
-from bedrock.analytics.utils import Algorithm
+from bedrock.analytics.utils import Algorithm, getNewId, getCurrentTime
 import logging
 import pandas as pd
 from rpy2.robjects import r, pandas2ri
 from rpy2.robjects.packages import importr
 from rpy2.rinterface import RRuntimeError
-
-import utils
-
 
 class Analytics(Algorithm):
 
@@ -82,13 +79,13 @@ class Analytics(Algorithm):
             # store metadata
             _, res_col = results_collection()
             src = res_col.find({'src_id': kwargs["src_id"]})[0]
-            res_id = utils.getNewId()
+            res_id = getNewId()
             res = {}
             res['id'] = res_id
             res['rootdir'] = kwargs['filepath']
             res['name'] = kwargs["name"]
             res['src_id'] = kwargs["src_id"]
-            res['created'] = utils.getCurrentTime()
+            res['created'] = getCurrentTime()
             res['analytic_id'] = kwargs["analytic_id"]
             res['parameters'] = kwargs["parameters"]
             res['outputs'] = kwargs["outputs"]
